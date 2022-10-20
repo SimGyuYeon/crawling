@@ -5,7 +5,6 @@ import urllib.request as req
 # from sqlalchemy import create_engine
 import requests
 from bs4 import BeautifulSoup
-import pandas as pd
 # import pymysql
 from fake_useragent import UserAgent
 from datetime import datetime, timedelta
@@ -60,6 +59,8 @@ class GetNews:
                     # print(li.a["href"])
                     driver.get(headers['referer'] + li.a["href"])
                     self.cnt_list = self.cnt_list + 1
+                    # 외부 사이트에서 이동 가능한 링크로 변환
+                    li.a["href"] = headers['referer']+ li.a["href"]
                     self.htmlContent = self.htmlContent + str(li)
                     time.sleep(1)
 
