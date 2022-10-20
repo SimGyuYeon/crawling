@@ -85,7 +85,7 @@ def postBlogAPI(title, content):
     url = 'https://www.tistory.com/apis/post/write?'
 
     param = {
-        'access_token':'479630ae6cbc3902c835b167b723877f_ea84b113389aebe34341420875e8590b',
+        'access_token':'',
         'blogName':'arg-dev',
         'title':title,
         'content':content,
